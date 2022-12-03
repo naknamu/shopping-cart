@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+.pinaka{
+  background-color:  #de182e;
+}
+
+.mataas{
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 75rem;
+  margin: 0px auto;
+  padding: 2rem;
+}
+
+.mataas>nav{
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}

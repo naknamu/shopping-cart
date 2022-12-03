@@ -1,8 +1,8 @@
 const Footer = () => {
     return ( 
-        <div>
+        <footer>
             Copyright © by naknamu 2022
-        </div>
+        </footer>
      );
 }
  
