@@ -27,3 +27,8 @@ body{
   justify-content: space-between;
   gap: 5rem;
 }
+
+.simbolo{
+  display: flex;
+  align-self: center;
+}

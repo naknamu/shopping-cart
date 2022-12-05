@@ -1,3 +1,5 @@
+import { FaShoppingCart } from 'react-icons/fa';
+
 const Header = () => {
     return ( 
         <header className="pinaka">
@@ -6,7 +8,7 @@ const Header = () => {
                 <nav>
                     <h3>Home</h3>
                     <h3>Shop</h3>
-                    <div>Cart</div>
+                    <div className='simbolo'><FaShoppingCart/></div>
                 </nav>
             </div>
         </header>
