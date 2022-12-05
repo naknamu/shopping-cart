@@ -2,11 +2,16 @@ import Card from "./card";
 
 const MainContent = () => {
     return ( 
-        <div>
-            <Card />
-            <Card />
-            <Card />
-        </div>
+        <main>
+            <div className="lagayan-ng-card">
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </div>
+        </main>
      );
 }
  

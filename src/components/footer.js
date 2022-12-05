@@ -1,7 +1,9 @@
 const Footer = () => {
     return ( 
-        <footer>
-            Copyright © by naknamu 2022
+        <footer className="pinaka">
+            <div className="mababa">
+                Copyright © by naknamu 2022
+            </div>
         </footer>
      );
 }
