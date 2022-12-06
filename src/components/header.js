@@ -1,4 +1,5 @@
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return ( 
@@ -6,8 +7,8 @@ const Header = () => {
             <div className="mataas">
                 <h1>MotorStore</h1>
                 <nav>
-                    <h3>Home</h3>
-                    <h3>Shop</h3>
+                    <Link to="/">Home</Link>
+                    <Link to="/shop">Shop</Link>
                     <div className='simbolo'><FaShoppingCart/></div>
                 </nav>
             </div>

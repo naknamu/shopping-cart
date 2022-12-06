@@ -23,6 +23,8 @@ body{
 
 .pinaka{
   background-color:  #de182e;
+  position: relative;
+  z-index: 1;
 }
 
 .mataas{
@@ -47,7 +49,6 @@ body{
 }
 
 main{
-  /* background-image: linear-gradient(to bottom, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff); */
   background-image: linear-gradient(to top, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff);
 }
 
@@ -99,4 +100,17 @@ footer{
   text-align: center;
   font-size: 1rem;
   padding: 1rem;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.home{
+  height: 48.2rem;
+}
+
+video{
+  position: fixed;
 }
