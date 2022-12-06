@@ -3,7 +3,7 @@ import Card from "./card";
 const MainContent = () => {
     return ( 
         <main>
-            <div className="lagayan-ng-card">
+            <div className="lagayan-ng-kard">
                 <Card />
                 <Card />
                 <Card />

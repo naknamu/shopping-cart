@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+
 *{
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
 
-html, body, #root, .App{
+html, body{
   height: 100%;
-  overflow: auto;
 }
 
 body{
   font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+#root{
+  display:flex;
+  flex-direction:column;
+  height: 100%;
 }
 
 .pinaka{
@@ -30,7 +38,7 @@ body{
 .mataas>nav{
   display: flex;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 7rem;
 }
 
 .simbolo{
@@ -39,21 +47,56 @@ body{
 }
 
 main{
-  height: 100%;
-  background-color: rgb(249, 249, 249);
+  /* background-image: linear-gradient(to bottom, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff); */
+  background-image: linear-gradient(to top, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff);
 }
 
-.lagayan-ng-card{
+.lagayan-ng-kard{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 3rem;
   gap: 2rem;
+  max-width: 77rem;
+  margin: 0px auto;
+}
+
+.kard{
+  background-color: aliceblue;
+  max-width: 340px;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid #e1e1e1;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kard img{
+  width: 100%;
+}
+
+.kard p{
+  font-size: 1rem;
+}
+
+.kard button{
+  padding: 0.5rem;
+  background-color:white;
+  color: #de182e;
+  font-size: 1rem;
+  border: 1px solid #de182e;
+  border-radius: 16px;
+}
+
+.kard button:hover{
+  background-color: #de182e;
+  color: white;
 }
 
 footer{
   color: white;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
   text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
 }
