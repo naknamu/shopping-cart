@@ -1,11 +1,14 @@
-import all_new_click160 from "../images/all-new-click160.png";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "../css/Cart.module.css";
+import { MdOutlineClose } from "react-icons/md";
+import { AiOutlineShopping } from "react-icons/ai";
+import { Link } from 'react-router-dom';
+import all_new_click160 from "../images/all-new-click160.png";
 
 const ShoppingCart = (props) => {
   const { showCart, setShowCart } = props;
 
-  const handleCloseShoppingCart = (e) => {
+  const handleCloseShoppingCart = () => {
     setShowCart(false);
   };
 
@@ -39,23 +42,16 @@ const ShoppingCart = (props) => {
               transition={{ ease: "easeOut", duration: 0.5 }}
               className={styles.cart}
             >
-              <div>
-                <div>
-                  <button onClick={(e) => handleCloseShoppingCart(e)}>X</button>
+              <div className={styles.cart_container}>
+                <div className={styles.head}>
+                  <button className={styles.exitBtn} onClick={(e) => handleCloseShoppingCart(e)}><MdOutlineClose /></button>
                   <h3>Your Shopping Cart</h3>
                 </div>
-                {/* <div className="item">
-                            <img src={all_new_click160} alt="click160" />
-                            <div>The All-New CLICK160</div>
-                            <p>SRP:₱ 116,900.00</p>
-                            <div className="cart-counter">
-                                <button>-</button>
-                                <div>0</div>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <p>Total: ₱ 116,900.00</p>
-                        <button>Checkout</button> */}
+                <p>Your cart is empty.</p>
+                <div alt="empty bag" className={styles.empty_bag}>
+                <AiOutlineShopping />
+                </div>
+                <Link to="/shop" className={styles.browse_prod}><button onClick={handleCloseShoppingCart}>Browse Products</button></Link>
               </div>
             </motion.div>
         </>
