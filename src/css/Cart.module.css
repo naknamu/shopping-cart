@@ -1,0 +1,10 @@
+.cart{
+    background-color: white;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 2rem;
+    width: 33.33333%;
+}
