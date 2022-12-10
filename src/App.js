@@ -10,13 +10,29 @@ function App() {
 
   const [showCart, setShowCart] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  
+  const [clickImage, setClickImage] = useState([]);
+  const [clickName, setClickName] = useState([]);
+  const [clickPrice, setClickPrice] = useState([]);
 
   const handleCartClick = () => {
       setShowCart(true);
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (img, name, price) => {
     setCartCount(cartCount + 1);
+
+    let imageArray = [...clickImage];
+    let nameArray = [...clickName];
+    let priceArray = [...clickPrice];
+
+    imageArray.push(img);
+    nameArray.push(name);
+    priceArray.push(price);
+
+    setClickImage(imageArray);
+    setClickName(nameArray);
+    setClickPrice(priceArray);
 }
 
   return (
@@ -29,7 +45,7 @@ function App() {
           <Route path="/shopping-cart" element={<ShoppingCart showCart={showCart} setShowCart={setShowCart} cartCount={cartCount}/>} />
         </Routes>
       <Footer />
-      <ShoppingCart showCart={showCart} setShowCart={setShowCart} cartCount={cartCount}/>
+      <ShoppingCart showCart={showCart} setShowCart={setShowCart} cartCount={cartCount} clickImage={clickImage} clickName={clickName} clickPrice={clickPrice}/>
       </BrowserRouter>
     </>
   );

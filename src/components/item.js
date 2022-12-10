@@ -2,13 +2,16 @@ import click160 from "../images/all-new-click160.png";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "../css/Item.module.css";
 
-const Item = () => {
+const Item = (props) => {
+
+    const {clickImage, clickName, clickPrice} = props;
+
     return ( 
         <>
         <div className={styles.item}>
-            <img src={click160} alt="item-img" />
-            <div>The All-New CLICK160</div>
-            <p>P397</p>
+            <img src={clickImage} alt="item-img" />
+            <div>{clickName}</div>
+            <p>{clickPrice}</p>
             <div className={styles.countChanger}>
             <button><FiMinus /></button>
             <div>1</div>

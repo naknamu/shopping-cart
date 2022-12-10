@@ -8,7 +8,7 @@ import Item from "./item";
 
 const ShoppingCart = (props) => {
 
-  const { showCart, setShowCart, cartCount} = props;
+  const { showCart, setShowCart, cartCount, clickImage, clickName, clickPrice} = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
 
@@ -67,7 +67,7 @@ const ShoppingCart = (props) => {
                 </div>}
                 {isCartEmpty && <Link to="/shop" className={styles.browse_prod}><button onClick={handleCloseShoppingCart}>Browse Products</button></Link>}
 
-                {!isCartEmpty && <Item />}
+                {!isCartEmpty && <Item clickImage={clickImage} clickName={clickName} clickPrice={clickPrice}/>}
               </div>
             </motion.div>
         </>
