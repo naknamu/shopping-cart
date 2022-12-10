@@ -1,15 +1,13 @@
 import Card from "./card";
 
-const Shop = () => {
+const Shop = (props) => {
+
+    const {handleAddToCart} = props;
+
     return ( 
         <main>
             <div className="lagayan-ng-kard">
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                <Card handleAddToCart={handleAddToCart}/>
             </div>
         </main>
      );

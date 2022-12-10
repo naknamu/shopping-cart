@@ -9,18 +9,24 @@ import { useState } from "react";
 function App() {
 
   const [showCart, setShowCart] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   const handleCartClick = () => {
       setShowCart(true);
   }
 
+  const handleAddToCart = () => {
+    console.log('Add to cart!');
+    setCartCount(cartCount + 1);
+}
+
   return (
     <>
       <BrowserRouter>
-        <Header handleCartClick={handleCartClick}/>
+        <Header handleCartClick={handleCartClick} cartCount={cartCount}/>
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
         </Routes>
       <Footer />
