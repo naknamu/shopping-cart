@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import all_new_click160 from "../images/all-new-click160.png";
 
 const ShoppingCart = (props) => {
-  const { showCart, setShowCart } = props;
+  const { showCart, setShowCart, cartCount} = props;
 
   const handleCloseShoppingCart = () => {
     setShowCart(false);

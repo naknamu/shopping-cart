@@ -23,8 +23,6 @@ body{
 
 .pinaka{
   background-color:  #de182e;
-  position: relative;
-  z-index: 1;
 }
 
 .mataas{
@@ -50,6 +48,7 @@ body{
 
 main{
   background-image: linear-gradient(to top, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff);
+  height: 100%;
 }
 
 .lagayan-ng-kard{
@@ -100,6 +99,10 @@ footer{
   text-align: center;
   font-size: 1rem;
   padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
 }
 
 a{
