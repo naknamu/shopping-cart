@@ -26,10 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/shop" element={<Shop handleAddToCart={handleAddToCart} />} />
-          <Route path="/shopping-cart" element={<ShoppingCart cartCount={cartCount}/>} />
+          <Route path="/shopping-cart" element={<ShoppingCart showCart={showCart} setShowCart={setShowCart} cartCount={cartCount}/>} />
         </Routes>
       <Footer />
-      <ShoppingCart showCart={showCart} setShowCart={setShowCart}/>
+      <ShoppingCart showCart={showCart} setShowCart={setShowCart} cartCount={cartCount}/>
       </BrowserRouter>
     </>
   );

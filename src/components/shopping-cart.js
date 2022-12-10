@@ -3,14 +3,14 @@ import styles from "../css/Cart.module.css";
 import { MdOutlineClose } from "react-icons/md";
 import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from 'react-router-dom';
-import all_new_click160 from "../images/all-new-click160.png";
+import { useEffect, useState } from "react";
+import Item from "./item";
 
 const ShoppingCart = (props) => {
+
   const { showCart, setShowCart, cartCount} = props;
 
-  const handleCloseShoppingCart = () => {
-    setShowCart(false);
-  };
+  const [isCartEmpty, setIsCartEmpty] = useState(true);
 
   const bgdrop = {
     hidden: {x: "-100%"},
@@ -21,6 +21,18 @@ const ShoppingCart = (props) => {
     hidden: { x: "100%" },
     visible: { x: "0" },
   };
+
+  const handleCloseShoppingCart = () => {
+    setShowCart(false);
+  };
+
+  useEffect(() => {
+    if (cartCount > 0){
+      setIsCartEmpty(false);
+    } else{
+      setIsCartEmpty(true);
+    }
+  }, [cartCount]);
 
   return (
     <AnimatePresence>
@@ -47,11 +59,15 @@ const ShoppingCart = (props) => {
                   <button className={styles.exitBtn} onClick={(e) => handleCloseShoppingCart(e)}><MdOutlineClose /></button>
                   <h3>Your Shopping Cart</h3>
                 </div>
-                <p>Your cart is empty.</p>
+
+                {isCartEmpty && <p>Your cart is empty.</p>}
+                {isCartEmpty && 
                 <div alt="empty bag" className={styles.empty_bag}>
                 <AiOutlineShopping />
-                </div>
-                <Link to="/shop" className={styles.browse_prod}><button onClick={handleCloseShoppingCart}>Browse Products</button></Link>
+                </div>}
+                {isCartEmpty && <Link to="/shop" className={styles.browse_prod}><button onClick={handleCloseShoppingCart}>Browse Products</button></Link>}
+
+                {!isCartEmpty && <Item />}
               </div>
             </motion.div>
         </>

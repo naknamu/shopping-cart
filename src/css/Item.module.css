@@ -1,0 +1,40 @@
+.item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.item>img{
+    width: 8rem;
+    height: 8rem;
+    grid-row: 1 / span 4;
+    justify-self: center;
+    background-color: #efe5e5;
+    padding: 0.5rem;
+}
+
+.item>p{
+    color: #de182e;
+}
+
+.countChanger{
+    display: flex;
+    place-items: center;
+}
+
+.countChanger>div{
+    place-self: center;
+    padding: 0.5rem 1rem;
+}
+
+.countChanger>button{
+    padding: 0.4rem;
+    background-color: white;
+    border: 2px solid #de182e;
+}
+
+.countChanger>button:hover{
+    background-color: #de182e;
+    color: white;
+}
