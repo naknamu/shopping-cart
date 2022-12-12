@@ -11,11 +11,8 @@ const ShoppingCart = (props) => {
     showCart,
     setShowCart,
     cartCount,
-    clickImage,
-    clickName,
-    clickPrice,
-    cartItem,
-    cartCountArray,
+    nonEmptyCartCount,
+    nonEmptyCartItem,
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -88,13 +85,13 @@ const ShoppingCart = (props) => {
               )}
 
               {!isCartEmpty &&
-                cartItem.map((item, index) => (
+                nonEmptyCartItem.map((item, index) => (
                   <Item
                     key={index}
-                    clickImage={clickImage[index]}
-                    clickName={clickName[index]}
-                    clickPrice={clickPrice[index]}
-                    cartCountArray={cartCountArray[index]}
+                    clickImage={item[0]}
+                    clickName={item[1]}
+                    clickPrice={item[2]}
+                    nonEmptyCartCount={nonEmptyCartCount[index]}
                   />
                 ))}
             </div>

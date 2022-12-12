@@ -1,9 +1,8 @@
-import click160 from "../images/all-new-click160.png";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "../css/Item.module.css";
 
 const Item = (props) => {
-  const { clickImage, clickName, clickPrice, cartCountArray } = props;
+  const { clickImage, clickName, clickPrice, nonEmptyCartCount } = props;
 
   return (
     <>
@@ -15,7 +14,7 @@ const Item = (props) => {
           <button>
             <FiMinus />
           </button>
-          <div>{cartCountArray}</div>
+          <div>{nonEmptyCartCount}</div>
           <button>
             <FiPlus />
           </button>

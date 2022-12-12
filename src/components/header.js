@@ -29,8 +29,8 @@ const Header = (props) => {
             <div className="simbolo" onClick={handleCartClick}>
               <FaShoppingCart />
               {showCartCount && (
-              <div className={styles.cartCount}>{cartCount}</div>
-            )}
+                <div className={styles.cartCount}>{cartCount}</div>
+              )}
             </div>
           </nav>
         </div>
