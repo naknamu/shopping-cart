@@ -1,31 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
 
-*{
+* {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
 
-html, body{
+html,
+body {
   height: 100%;
 }
 
-body{
+body {
   font-size: 1.6rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-#root{
-  display:flex;
-  flex-direction:column;
+#root {
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
-.pinaka{
-  background-color:  #de182e;
+.pinaka {
+  background-color: #de182e;
 }
 
-.mataas{
+.mataas {
   color: white;
   display: flex;
   justify-content: space-between;
@@ -35,23 +36,30 @@ body{
   padding: 2rem;
 }
 
-.mataas>nav{
+.mataas > nav {
   display: flex;
   justify-content: space-between;
   gap: 7rem;
 }
 
-.simbolo{
+.simbolo {
   display: flex;
   align-self: center;
 }
 
-main{
-  background-image: linear-gradient(to top, #de182e, #f45d87, #f29acb, #edd0f3, #ffffff);
+main {
+  background-image: linear-gradient(
+    to top,
+    #de182e,
+    #f45d87,
+    #f29acb,
+    #edd0f3,
+    #ffffff
+  );
   height: 100%;
 }
 
-.lagayan-ng-kard{
+.lagayan-ng-kard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 3rem;
@@ -60,7 +68,7 @@ main{
   margin: 0px auto;
 }
 
-.kard{
+.kard {
   background-color: aliceblue;
   max-width: 340px;
   padding: 1rem;
@@ -72,29 +80,29 @@ main{
   gap: 1rem;
 }
 
-.kard img{
+.kard img {
   width: 100%;
 }
 
-.kard p{
+.kard p {
   font-size: 1rem;
 }
 
-.kard button{
+.kard button {
   padding: 0.5rem;
-  background-color:white;
+  background-color: white;
   color: #de182e;
   font-size: 1rem;
   border: 1px solid #de182e;
   border-radius: 16px;
 }
 
-.kard button:hover{
+.kard button:hover {
   background-color: #de182e;
   color: white;
 }
 
-footer{
+footer {
   color: white;
   text-align: center;
   font-size: 1rem;
@@ -105,17 +113,15 @@ footer{
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
 }
 
-.home{
+.home {
   height: 48.2rem;
 }
 
-video{
+video {
   position: fixed;
 }
-
-
