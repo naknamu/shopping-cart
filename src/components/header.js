@@ -28,10 +28,10 @@ const Header = (props) => {
             <Link to="/shop">Shop</Link>
             <div className="simbolo" onClick={handleCartClick}>
               <FaShoppingCart />
-            </div>
-            {showCartCount && (
+              {showCartCount && (
               <div className={styles.cartCount}>{cartCount}</div>
             )}
+            </div>
           </nav>
         </div>
       </header>
