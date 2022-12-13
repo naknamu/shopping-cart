@@ -5,7 +5,7 @@ import pcx160_cbs from "../images/pcx160-cbs.png";
 import { useEffect, useState } from "react";
 
 const Shop = (props) => {
-  const { handleAddToCart } = props;
+  const { handleAddToCart} = props;
 
   const motor = [
     [click160, "The All-New CLICK160", "₱ 122,900.00"],
@@ -44,6 +44,7 @@ const Shop = (props) => {
             itemName={itemName[index]}
             itemPrice={itemPrice[index]}
             id={index}
+            item={item}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Card = (props) => {
-  const { handleAddToCart, itemImage, itemName, itemPrice, id } = props;
+  const { handleAddToCart, itemImage, itemName, itemPrice, id , item} = props;
 
   const [cardCount, setCardCount] = useState(0);
 
@@ -12,6 +12,8 @@ const Card = (props) => {
 
     setCardCount(temp_cardCount);
 
+    console.log(item);
+
     return temp_cardCount;
   };
 
@@ -20,10 +22,11 @@ const Card = (props) => {
       <img src={itemImage} alt="click160" />
       <div>{itemName}</div>
       <p>SRP: {itemPrice}</p>
+      {cardCount}
       <button
         onClick={function () {
           const count = handleCardCount();
-          handleAddToCart(itemImage, itemName, itemPrice, id, count);
+          handleAddToCart(itemImage, itemName, itemPrice, id, count, cardCount);
         }}
       >
         Add to Cart

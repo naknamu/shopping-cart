@@ -4,7 +4,7 @@ import Shop from "./components/shop";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import ShoppingCart from "./components/shopping-cart";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [showCart, setShowCart] = useState(false);
@@ -13,43 +13,33 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
   const [cartCountArray, setCartCountArray] = useState([]);
 
-  const [nonEmptyCartItem, setNonEmptyCartItem] = useState([]);
-  const [nonEmptyCartCount, setNonEmptyCartCount] = useState([]);
-
   const handleCartClick = () => {
     setShowCart(true);
   };
 
-  const handleAddToCart = (img, name, price, id, count) => {
+  const handleAddToCart = (img, name, price, id, count, cardCount) => {
     setCartCount(cartCount + 1);
 
     let temp_cartItem = [...cartItem];
     temp_cartItem[id] = [img, name, price];
 
-    setCartItem(temp_cartItem);
-
     let temp_cartCountArray = [...cartCountArray];
     temp_cartCountArray[id] = [count];
 
-    setCartCountArray(temp_cartCountArray);
+    console.log(cardCount);
+    handleEmptyCartItem(temp_cartItem, temp_cartCountArray);
   };
 
-  const handleEmptyCartItem = () => {
-    let temp_cartItem = [...cartItem];
-    let temp_cartCount = [...cartCountArray];
+  const handleEmptyCartItem = (array1, array2) => {
 
-    const nonEmptyArray = temp_cartItem.filter((item) => item !== undefined);
-    const nonEmptyCountArray = temp_cartCount.filter(
+    const nonEmptyArray = array1.filter((item) => item !== undefined);
+    const nonEmptyCountArray = array2.filter(
       (item) => item !== undefined
     );
 
-    setNonEmptyCartItem(nonEmptyArray);
-    setNonEmptyCartCount(nonEmptyCountArray);
+    setCartItem(nonEmptyArray);
+    setCartCountArray(nonEmptyCountArray);
   };
-
-  useEffect(() => {
-    handleEmptyCartItem();
-  }, [cartCount]);
 
   return (
     <>
@@ -68,9 +58,12 @@ function App() {
           showCart={showCart}
           setShowCart={setShowCart}
           cartCount={cartCount}
+
+          setCartCount={setCartCount}
           cartItem={cartItem}
-          nonEmptyCartCount={nonEmptyCartCount}
-          nonEmptyCartItem={nonEmptyCartItem}
+          setCartItem={setCartItem}
+          cartCountArray={cartCountArray}
+          setCartCountArray={setCartCountArray}
         />
       </BrowserRouter>
     </>

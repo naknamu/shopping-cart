@@ -11,8 +11,11 @@ const ShoppingCart = (props) => {
     showCart,
     setShowCart,
     cartCount,
-    nonEmptyCartCount,
-    nonEmptyCartItem,
+    setCartCount,
+    cartItem,
+    setCartItem,
+    cartCountArray,
+    setCartCountArray,
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -30,6 +33,27 @@ const ShoppingCart = (props) => {
   const handleCloseShoppingCart = () => {
     setShowCart(false);
   };
+
+  const handleMinusBtn = (index) => {
+    let tempCount = [...cartCountArray];
+    let tempArray = [...cartItem];
+
+    tempCount[index]--;
+
+    setCartCountArray(tempCount);
+
+    if (tempCount[index] === 0){
+
+      tempCount.splice(index, 1);
+      setCartCountArray(tempCount);
+
+      tempArray.splice(index, 1);
+      setCartItem(tempArray);
+    }
+
+    setCartCount(cartCount-1);
+
+  }
 
   useEffect(() => {
     if (cartCount > 0) {
@@ -85,13 +109,15 @@ const ShoppingCart = (props) => {
               )}
 
               {!isCartEmpty &&
-                nonEmptyCartItem.map((item, index) => (
+                cartItem.map((item, index) => (
                   <Item
                     key={index}
                     clickImage={item[0]}
                     clickName={item[1]}
                     clickPrice={item[2]}
-                    nonEmptyCartCount={nonEmptyCartCount[index]}
+                    cartCountArray={cartCountArray[index]}
+                    handleMinusBtn={handleMinusBtn}
+                    index={index}
                   />
                 ))}
             </div>
