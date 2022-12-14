@@ -13,20 +13,26 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
   const [cartCountArray, setCartCountArray] = useState([]);
 
+  const [nonEmptyCartItem, setNonEmptyCartItem] = useState([]);
+  const [nonEmptyCartCount, setNonEmptyCartCount] = useState([]);
+
   const handleCartClick = () => {
     setShowCart(true);
   };
 
-  const handleAddToCart = (img, name, price, id, count, cardCount) => {
+  const handleAddToCart = (img, name, price, id, count) => {
     setCartCount(cartCount + 1);
 
     let temp_cartItem = [...cartItem];
     temp_cartItem[id] = [img, name, price];
 
-    let temp_cartCountArray = [...cartCountArray];
-    temp_cartCountArray[id] = [count];
+    setCartItem(temp_cartItem);
 
-    console.log(cardCount);
+    let temp_cartCountArray = [...cartCountArray];
+    temp_cartCountArray[id] = count;
+    
+    setCartCountArray(temp_cartCountArray);
+
     handleEmptyCartItem(temp_cartItem, temp_cartCountArray);
   };
 
@@ -37,8 +43,8 @@ function App() {
       (item) => item !== undefined
     );
 
-    setCartItem(nonEmptyArray);
-    setCartCountArray(nonEmptyCountArray);
+    setNonEmptyCartItem(nonEmptyArray);
+    setNonEmptyCartCount(nonEmptyCountArray);
   };
 
   return (
@@ -64,6 +70,9 @@ function App() {
           setCartItem={setCartItem}
           cartCountArray={cartCountArray}
           setCartCountArray={setCartCountArray}
+
+          nonEmptyCartCount={nonEmptyCartCount}
+          nonEmptyCartItem={nonEmptyCartItem}
         />
       </BrowserRouter>
     </>

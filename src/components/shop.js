@@ -44,7 +44,6 @@ const Shop = (props) => {
             itemName={itemName[index]}
             itemPrice={itemPrice[index]}
             id={index}
-            item={item}
           />
         ))}
       </div>

@@ -16,6 +16,8 @@ const ShoppingCart = (props) => {
     setCartItem,
     cartCountArray,
     setCartCountArray,
+    nonEmptyCartCount,
+    nonEmptyCartItem,
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -39,7 +41,6 @@ const ShoppingCart = (props) => {
     let tempArray = [...cartItem];
 
     tempCount[index]--;
-
     setCartCountArray(tempCount);
 
     if (tempCount[index] === 0){
@@ -109,13 +110,13 @@ const ShoppingCart = (props) => {
               )}
 
               {!isCartEmpty &&
-                cartItem.map((item, index) => (
+                nonEmptyCartItem.map((item, index) => (
                   <Item
                     key={index}
                     clickImage={item[0]}
                     clickName={item[1]}
                     clickPrice={item[2]}
-                    cartCountArray={cartCountArray[index]}
+                    nonEmptyCartCount={nonEmptyCartCount[index]}
                     handleMinusBtn={handleMinusBtn}
                     index={index}
                   />

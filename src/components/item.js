@@ -2,7 +2,7 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "../css/Item.module.css";
 
 const Item = (props) => {
-  const { clickImage, clickName, clickPrice, cartCountArray, handleMinusBtn, index} = props;
+  const { clickImage, clickName, clickPrice, nonEmptyCartCount , handleMinusBtn, index} = props;
 
   return (
     <>
@@ -14,7 +14,7 @@ const Item = (props) => {
           <button onClick={() => handleMinusBtn(index)}>
             <FiMinus />
           </button>
-          <div>{cartCountArray}</div>
+          <div>{nonEmptyCartCount}</div>
           <button>
             <FiPlus />
           </button>
