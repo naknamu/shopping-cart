@@ -24,7 +24,7 @@ function App() {
     setCartCount(cartCount + 1);
 
     let temp_cartItem = [...cartItem];
-    temp_cartItem[id] = [img, name, price];
+    temp_cartItem[id] = [img, name, price, id];
 
     setCartItem(temp_cartItem);
 
