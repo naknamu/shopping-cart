@@ -17,7 +17,9 @@ const ShoppingCart = (props) => {
     cartCountArray,
     setCartCountArray,
     nonEmptyCartCount,
+    setNonEmptyCartCount,
     nonEmptyCartItem,
+    setNonEmptyCartItem
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -37,19 +39,19 @@ const ShoppingCart = (props) => {
   };
 
   const handleMinusBtn = (index) => {
-    let tempCount = [...cartCountArray];
-    let tempArray = [...cartItem];
+    let tempCount = [...nonEmptyCartCount];
+    let tempArray = [...nonEmptyCartItem];
 
     tempCount[index]--;
-    setCartCountArray(tempCount);
+    setNonEmptyCartCount(tempCount);
 
     if (tempCount[index] === 0){
 
       tempCount.splice(index, 1);
-      setCartCountArray(tempCount);
+      setNonEmptyCartCount(tempCount);
 
       tempArray.splice(index, 1);
-      setCartItem(tempArray);
+      setNonEmptyCartItem(tempArray);
     }
 
     setCartCount(cartCount-1);

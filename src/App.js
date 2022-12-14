@@ -72,7 +72,9 @@ function App() {
           setCartCountArray={setCartCountArray}
 
           nonEmptyCartCount={nonEmptyCartCount}
+          setNonEmptyCartCount={setNonEmptyCartCount}
           nonEmptyCartItem={nonEmptyCartItem}
+          setNonEmptyCartItem={setNonEmptyCartItem}
         />
       </BrowserRouter>
     </>
