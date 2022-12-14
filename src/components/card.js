@@ -1,18 +1,28 @@
-import { useState } from "react";
+// import { useState } from "react";
 
 const Card = (props) => {
-  const { handleAddToCart, itemImage, itemName, itemPrice, id} = props;
+  const { handleAddToCart, itemImage, itemName, itemPrice, id, cardCountArray, setCardCountArray} = props;
 
-  const [cardCount, setCardCount] = useState(0);
+  // const [cardCount, setCardCount] = useState(0);
+
+  // const handleCardCount = () => {
+  //   let temp_cardCount = cardCount;
+
+  //   temp_cardCount++;
+
+  //   setCardCount(temp_cardCount);
+
+  //   return temp_cardCount;
+  // };
 
   const handleCardCount = () => {
-    let temp_cardCount = cardCount;
+    let temp_cardCount = [...cardCountArray];
 
-    temp_cardCount++;
+    temp_cardCount[id]++;
 
-    setCardCount(temp_cardCount);
+    setCardCountArray(temp_cardCount);
 
-    return temp_cardCount;
+    return temp_cardCount[id];
   };
 
   return (
@@ -20,7 +30,7 @@ const Card = (props) => {
       <img src={itemImage} alt="click160" />
       <div>{itemName}</div>
       <p>SRP: {itemPrice}</p>
-      {cardCount}
+      {cardCountArray[id]}
       <button
         onClick={function () {
           const count = handleCardCount();

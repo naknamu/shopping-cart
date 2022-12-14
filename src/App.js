@@ -16,6 +16,8 @@ function App() {
   const [nonEmptyCartItem, setNonEmptyCartItem] = useState([]);
   const [nonEmptyCartCount, setNonEmptyCartCount] = useState([]);
 
+  const [cardCountArray, setCardCountArray] = useState([]);
+
   const handleCartClick = () => {
     setShowCart(true);
   };
@@ -55,7 +57,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/shop"
-            element={<Shop handleAddToCart={handleAddToCart} />}
+            element={<Shop handleAddToCart={handleAddToCart} cardCountArray={cardCountArray} setCardCountArray={setCardCountArray}/>}
           />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
         </Routes>
@@ -75,6 +77,9 @@ function App() {
           setNonEmptyCartCount={setNonEmptyCartCount}
           nonEmptyCartItem={nonEmptyCartItem}
           setNonEmptyCartItem={setNonEmptyCartItem}
+
+          cardCountArray={cardCountArray}
+          setCardCountArray={setCardCountArray}
         />
       </BrowserRouter>
     </>
