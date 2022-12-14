@@ -32,7 +32,6 @@ const Shop = (props) => {
     setItemName(nameArray);
     setItemPrice(priceArray);
 
-    //test
     //initializes count for each card item
     let tempCardCount = [...cardCountArray];
     for (let i=0; i<motor.length; i++){

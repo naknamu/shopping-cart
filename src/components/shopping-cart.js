@@ -47,7 +47,6 @@ const ShoppingCart = (props) => {
     tempCount[index]--;
     setNonEmptyCartCount(tempCount);
 
-    //test
     let tempNullCountArray = [...cartCountArray];
     let tempNullItemArray = [...cartItem];
     let newIndex = tempArray[index][3];
@@ -56,7 +55,6 @@ const ShoppingCart = (props) => {
     tempNullCountArray[newIndex]--;
     setCartCountArray(tempNullCountArray);
 
-    //test
     let tempCardCount = [...cardCountArray];
     tempCardCount[newIndex]--;
     setCardCountArray(tempCardCount);
