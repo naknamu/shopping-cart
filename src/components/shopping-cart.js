@@ -41,32 +41,35 @@ const ShoppingCart = (props) => {
   };
 
   const handleMinusBtn = (index) => {
+    //array filtered with undefined items
     let tempCount = [...nonEmptyCartCount];
     let tempArray = [...nonEmptyCartItem];
 
     tempCount[index]--;
     setNonEmptyCartCount(tempCount);
 
+    //array with undefined items
     let tempNullCountArray = [...cartCountArray];
     let tempNullItemArray = [...cartItem];
     let newIndex = tempArray[index][3];
-    console.log(newIndex);
 
     tempNullCountArray[newIndex]--;
     setCartCountArray(tempNullCountArray);
 
+    //card counter array
     let tempCardCount = [...cardCountArray];
     tempCardCount[newIndex]--;
     setCardCountArray(tempCardCount);
 
     if (tempCount[index] === 0){
-
+      //remove array item
       tempCount.splice(index, 1);
       setNonEmptyCartCount(tempCount);
 
       tempArray.splice(index, 1);
       setNonEmptyCartItem(tempArray);
 
+      //set to undefined to reflect back original array
       tempNullCountArray[newIndex] = undefined;
       setCartCountArray(tempNullCountArray);
 
@@ -74,8 +77,34 @@ const ShoppingCart = (props) => {
       setCartItem(tempNullItemArray);
     }
 
+    //total cart count
     setCartCount(cartCount-1);
 
+  }
+
+  const handlePlusBtn = (index) => {
+
+    //array filtered with undefined items
+    let tempCount = [...nonEmptyCartCount];
+
+    tempCount[index]++;
+    setNonEmptyCartCount(tempCount);
+
+    //array with undefined items
+    let tempArray = [...nonEmptyCartItem];
+    let newIndex = tempArray[index][3];
+    let tempNullCountArray = [...cartCountArray];
+
+    tempNullCountArray[newIndex]++;
+    setCartCountArray(tempNullCountArray);
+
+    //card counter array
+    let tempCardCount = [...cardCountArray];
+    tempCardCount[newIndex]++;
+    setCardCountArray(tempCardCount);
+
+    //total cart count
+    setCartCount(cartCount+1);
   }
 
   useEffect(() => {
@@ -141,6 +170,7 @@ const ShoppingCart = (props) => {
                     nonEmptyCartCount={nonEmptyCartCount[index]}
                     handleMinusBtn={handleMinusBtn}
                     index={index}
+                    handlePlusBtn={handlePlusBtn}
                   />
                 ))}
             </div>
