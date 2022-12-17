@@ -9,7 +9,7 @@ const Item = (props) => {
       <div className={styles.item}>
         <img src={clickImage} alt="item-img" />
         <div>{clickName}</div>
-        <p>{clickPrice}</p>
+        <p>₱ {clickPrice}</p>
         <div className={styles.countChanger}>
           <button onClick={() => handleMinusBtn(index)}>
             <FiMinus />

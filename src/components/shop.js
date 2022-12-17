@@ -8,9 +8,9 @@ const Shop = (props) => {
   const { handleAddToCart, cardCountArray, setCardCountArray} = props;
 
   const motor = [
-    [click160, "The All-New CLICK160", "₱ 122,900.00"],
-    [airblade160, "The All-New AirBlade160", "₱ 125,900.00"],
-    [pcx160_cbs, "PCX160-CBS", "₱ 133,900.00"],
+    [click160, "The All-New CLICK160", "122900.00"],
+    [airblade160, "The All-New AirBlade160", "125900.00"],
+    [pcx160_cbs, "PCX160-CBS", "133900.00"],
   ];
 
   const [itemImage, setItemImage] = useState([]);

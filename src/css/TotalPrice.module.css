@@ -1,0 +1,32 @@
+.totalPrice{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.totalPrice > h4{
+    text-align: center;
+}
+
+.checkoutBtn{
+    display: flex;
+    justify-content: center;
+}
+
+
+.checkoutBtn > button{
+    padding: 0.5rem;
+    background-color: white;
+    color: #de182e;
+    font-size: 2rem;
+    border: 1px solid #de182e;
+    border-radius: 16px;
+    width: 80%;
+    transition: all 0.4s ease-out;
+}
+
+.checkoutBtn > button:hover {
+    background-color: #de182e;
+    color: white;
+  }

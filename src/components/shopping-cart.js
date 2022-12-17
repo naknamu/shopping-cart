@@ -5,6 +5,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Item from "./item";
+import TotalPrice from "./totalPrice";
 
 const ShoppingCart = (props) => {
   const {
@@ -21,7 +22,10 @@ const ShoppingCart = (props) => {
     nonEmptyCartItem,
     setNonEmptyCartItem,
     cardCountArray,
-    setCardCountArray
+    setCardCountArray,
+    totalPrice,
+    newPrice,
+    nonEmptyPrice
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -47,6 +51,9 @@ const ShoppingCart = (props) => {
 
     tempCount[index]--;
     setNonEmptyCartCount(tempCount);
+
+    //price decrease
+    // handlePriceChange(index, tempArray ,tempCount);
 
     //array with undefined items
     let tempNullCountArray = [...cartCountArray];
@@ -86,12 +93,15 @@ const ShoppingCart = (props) => {
 
     //array filtered with undefined items
     let tempCount = [...nonEmptyCartCount];
+    let tempArray = [...nonEmptyCartItem];
 
     tempCount[index]++;
     setNonEmptyCartCount(tempCount);
 
+    //price increase
+    // handlePriceChange(index, tempArray , tempCount);
+
     //array with undefined items
-    let tempArray = [...nonEmptyCartItem];
     let newIndex = tempArray[index][3];
     let tempNullCountArray = [...cartCountArray];
 
@@ -166,13 +176,15 @@ const ShoppingCart = (props) => {
                     key={index}
                     clickImage={item[0]}
                     clickName={item[1]}
-                    clickPrice={item[2]}
+                    clickPrice={newPrice[index]}
                     nonEmptyCartCount={nonEmptyCartCount[index]}
                     handleMinusBtn={handleMinusBtn}
                     index={index}
                     handlePlusBtn={handlePlusBtn}
                   />
                 ))}
+
+              {!isCartEmpty && <TotalPrice totalPrice={totalPrice}/>}
             </div>
           </motion.div>
         </>

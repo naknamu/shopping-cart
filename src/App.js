@@ -18,6 +18,11 @@ function App() {
 
   const [cardCountArray, setCardCountArray] = useState([]);
 
+  const [newPrice, setNewPrice] = useState([]);
+  const [nonEmptyPrice, setNonEmptyPrice]= useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+
   const handleCartClick = () => {
     setShowCart(true);
   };
@@ -35,10 +40,12 @@ function App() {
     
     setCartCountArray(temp_cartCountArray);
 
-    handleEmptyCartItem(temp_cartItem, temp_cartCountArray);
+    handleEmptyCartItem(temp_cartItem, temp_cartCountArray, id);
+
+    handlePriceIncrease(id, temp_cartItem, temp_cartCountArray);
   };
 
-  const handleEmptyCartItem = (array1, array2) => {
+  const handleEmptyCartItem = (array1, array2, id) => {
 
     const nonEmptyArray = array1.filter((item) => item !== undefined);
     const nonEmptyCountArray = array2.filter(
@@ -48,6 +55,68 @@ function App() {
     setNonEmptyCartItem(nonEmptyArray);
     setNonEmptyCartCount(nonEmptyCountArray);
   };
+
+  const handleEmptyPrice = (array) => {
+    const nonEmptyArray = array.filter((item) => item !== undefined);
+
+    setNonEmptyPrice(nonEmptyArray);
+  }
+
+  // const handlePriceChange = (index, arrayItem ,arrayCount) => {
+  //   //array filtered with undefined items
+  //   let tempCount = [...arrayCount];
+  //   let tempArray = [...arrayItem];
+  //   let tempPrice = [...newPrice];
+
+  //   //convert string into number
+  //   let price = parseFloat(tempArray[index][2]);
+
+  //   price *= tempCount[index];
+
+  //   console.log(price);
+
+  //   if (price === 0){
+  //     tempPrice.splice(index, 1);
+  //   } else {
+  //     tempPrice[index] = price.toString() + '.00';
+  //   }
+
+  //   setNewPrice(tempPrice);
+
+  //   handleEmptyPrice(tempPrice);
+
+  //   handleTotalPrice(tempPrice);
+  // }
+
+  const handlePriceIncrease = (index, arrayItem ,arrayCount) => {
+    //array filtered with undefined items
+    let tempCount = [...arrayCount];
+    let tempArray = [...arrayItem];
+    let tempPrice = [...newPrice];
+
+    //convert string into number
+    let price = parseFloat(tempArray[index][2]);
+
+    price *= tempCount[index];
+
+    tempPrice[index] = price.toString() + '.00';
+
+    setNewPrice(tempPrice);
+
+    handleTotalPrice(tempPrice);
+  }
+
+  const handleTotalPrice = (tempArray) => {
+    let total = 0;
+    for (let i=0; i<tempArray.length; i++){
+      if (tempArray[i] !== undefined){
+        let number = parseFloat(tempArray[i]);
+        total += number;
+      }
+    }
+    setTotalPrice(total);
+
+  }
 
   return (
     <>
@@ -80,6 +149,10 @@ function App() {
 
           cardCountArray={cardCountArray}
           setCardCountArray={setCardCountArray}
+
+          totalPrice={totalPrice}
+          newPrice={newPrice}
+          nonEmptyPrice={nonEmptyPrice}
         />
       </BrowserRouter>
     </>

@@ -16,7 +16,7 @@ const Card = (props) => {
       <img src={itemImage} alt="click160" />
       <div>{itemName}</div>
       <p>SRP: {itemPrice}</p>
-      {cardCountArray[id]}
+      {/* {cardCountArray[id]} */}
       <button
         onClick={function () {
           const count = handleCardCount();
