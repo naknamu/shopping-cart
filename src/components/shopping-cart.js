@@ -28,7 +28,7 @@ const ShoppingCart = (props) => {
     newPrice,
     setNewPrice,
     nonEmptyPrice,
-    setNonEmptyPrice
+    setNonEmptyPrice,
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -72,7 +72,7 @@ const ShoppingCart = (props) => {
     tempCardCount[newIndex]--;
     setCardCountArray(tempCardCount);
 
-    if (tempCount[index] === 0){
+    if (tempCount[index] === 0) {
       //remove array item
       tempCount.splice(index, 1);
       setNonEmptyCartCount(tempCount);
@@ -89,12 +89,10 @@ const ShoppingCart = (props) => {
     }
 
     //total cart count
-    setCartCount(cartCount-1);
-
-  }
+    setCartCount(cartCount - 1);
+  };
 
   const handlePlusBtn = (index) => {
-
     //array filtered with undefined items
     let tempCount = [...nonEmptyCartCount];
     let tempArray = [...nonEmptyCartItem];
@@ -104,7 +102,7 @@ const ShoppingCart = (props) => {
 
     //price increase
     // handlePriceChange(index, tempArray , tempCount);
-    handlePriceIncrease(index, tempArray , tempCount);
+    handlePriceIncrease(index, tempArray, tempCount);
 
     //array with undefined items
     let newIndex = tempArray[index][3];
@@ -119,8 +117,8 @@ const ShoppingCart = (props) => {
     setCardCountArray(tempCardCount);
 
     //total cart count
-    setCartCount(cartCount+1);
-  }
+    setCartCount(cartCount + 1);
+  };
 
   const handlePriceDecrease = (index, arrayItem, arrayCount) => {
     //array with no undefined items
@@ -133,23 +131,23 @@ const ShoppingCart = (props) => {
     numPrice *= tempCount[index];
 
     let newIndex = tempArray[index][3];
-    tempEmptyPrice[newIndex] = numPrice.toString() + '.00';
+    tempEmptyPrice[newIndex] = numPrice.toString() + ".00";
     setNewPrice(tempEmptyPrice);
 
     //if price is zero, delete item
-    if (numPrice === 0){
+    if (numPrice === 0) {
       tempPrice.splice(index, 1);
       tempEmptyPrice[newIndex] = undefined;
       setNewPrice(tempEmptyPrice);
-    } else{
-      tempPrice[index] = numPrice.toString() + '.00';
+    } else {
+      tempPrice[index] = numPrice.toString() + ".00";
     }
 
     setNonEmptyPrice(tempPrice);
 
     //calc total price
     handleTotalPrice(tempPrice);
-  }
+  };
 
   const handlePriceIncrease = (index, arrayItem, arrayCount) => {
     //array with no undefined items
@@ -162,17 +160,17 @@ const ShoppingCart = (props) => {
     numPrice *= tempCount[index];
 
     //price array with no undefined items
-    tempPrice[index] = numPrice.toString() + '.00';
+    tempPrice[index] = numPrice.toString() + ".00";
     setNonEmptyPrice(tempPrice);
 
     //price array with undefined items
     let newIndex = tempArray[index][3];
-    tempEmptyPrice[newIndex] = numPrice.toString() + '.00';
+    tempEmptyPrice[newIndex] = numPrice.toString() + ".00";
     setNewPrice(tempEmptyPrice);
 
     //calc total price
     handleTotalPrice(tempPrice);
-  }
+  };
 
   useEffect(() => {
     if (cartCount > 0) {
@@ -241,7 +239,7 @@ const ShoppingCart = (props) => {
                   />
                 ))}
 
-              {!isCartEmpty && <TotalPrice totalPrice={totalPrice}/>}
+              {!isCartEmpty && <TotalPrice totalPrice={totalPrice} />}
             </div>
           </motion.div>
         </>

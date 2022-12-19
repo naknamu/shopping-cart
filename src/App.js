@@ -19,9 +19,8 @@ function App() {
   const [cardCountArray, setCardCountArray] = useState([]);
 
   const [newPrice, setNewPrice] = useState([]);
-  const [nonEmptyPrice, setNonEmptyPrice]= useState([]);
+  const [nonEmptyPrice, setNonEmptyPrice] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
 
   const handleCartClick = () => {
     setShowCart(true);
@@ -37,7 +36,7 @@ function App() {
 
     let temp_cartCountArray = [...cartCountArray];
     temp_cartCountArray[id] = count;
-    
+
     setCartCountArray(temp_cartCountArray);
 
     handleEmptyCartItem(temp_cartItem, temp_cartCountArray, id);
@@ -46,11 +45,8 @@ function App() {
   };
 
   const handleEmptyCartItem = (array1, array2, id) => {
-
     const nonEmptyArray = array1.filter((item) => item !== undefined);
-    const nonEmptyCountArray = array2.filter(
-      (item) => item !== undefined
-    );
+    const nonEmptyCountArray = array2.filter((item) => item !== undefined);
 
     setNonEmptyCartItem(nonEmptyArray);
     setNonEmptyCartCount(nonEmptyCountArray);
@@ -60,35 +56,9 @@ function App() {
     const nonEmptyArray = array.filter((item) => item !== undefined);
 
     setNonEmptyPrice(nonEmptyArray);
-  }
+  };
 
-  // const handlePriceChange = (index, arrayItem ,arrayCount) => {
-  //   //array filtered with undefined items
-  //   let tempCount = [...arrayCount];
-  //   let tempArray = [...arrayItem];
-  //   let tempPrice = [...newPrice];
-
-  //   //convert string into number
-  //   let price = parseFloat(tempArray[index][2]);
-
-  //   price *= tempCount[index];
-
-  //   console.log(price);
-
-  //   if (price === 0){
-  //     tempPrice.splice(index, 1);
-  //   } else {
-  //     tempPrice[index] = price.toString() + '.00';
-  //   }
-
-  //   setNewPrice(tempPrice);
-
-  //   handleEmptyPrice(tempPrice);
-
-  //   handleTotalPrice(tempPrice);
-  // }
-
-  const handlePriceIncrease = (index, arrayItem ,arrayCount) => {
+  const handlePriceIncrease = (index, arrayItem, arrayCount) => {
     //array filtered with undefined items
     let tempCount = [...arrayCount];
     let tempArray = [...arrayItem];
@@ -99,26 +69,25 @@ function App() {
 
     price *= tempCount[index];
 
-    tempPrice[index] = price.toString() + '.00';
+    tempPrice[index] = price.toString() + ".00";
 
     setNewPrice(tempPrice);
 
     handleTotalPrice(tempPrice);
 
     handleEmptyPrice(tempPrice);
-  }
+  };
 
   const handleTotalPrice = (tempArray) => {
     let total = 0;
-    for (let i=0; i<tempArray.length; i++){
-      if (tempArray[i] !== undefined){
+    for (let i = 0; i < tempArray.length; i++) {
+      if (tempArray[i] !== undefined) {
         let number = parseFloat(tempArray[i]);
         total += number;
       }
     }
     setTotalPrice(total);
-
-  }
+  };
 
   return (
     <>
@@ -128,7 +97,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route
             path="/shop"
-            element={<Shop handleAddToCart={handleAddToCart} cardCountArray={cardCountArray} setCardCountArray={setCardCountArray}/>}
+            element={
+              <Shop
+                handleAddToCart={handleAddToCart}
+                cardCountArray={cardCountArray}
+                setCardCountArray={setCardCountArray}
+              />
+            }
           />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
         </Routes>
@@ -137,27 +112,21 @@ function App() {
           showCart={showCart}
           setShowCart={setShowCart}
           cartCount={cartCount}
-
           setCartCount={setCartCount}
           cartItem={cartItem}
           setCartItem={setCartItem}
           cartCountArray={cartCountArray}
           setCartCountArray={setCartCountArray}
-
           nonEmptyCartCount={nonEmptyCartCount}
           setNonEmptyCartCount={setNonEmptyCartCount}
           nonEmptyCartItem={nonEmptyCartItem}
           setNonEmptyCartItem={setNonEmptyCartItem}
-
           cardCountArray={cardCountArray}
           setCardCountArray={setCardCountArray}
-
           totalPrice={totalPrice}
           handleTotalPrice={handleTotalPrice}
-
           newPrice={newPrice}
           setNewPrice={setNewPrice}
-
           nonEmptyPrice={nonEmptyPrice}
           setNonEmptyPrice={setNonEmptyPrice}
         />

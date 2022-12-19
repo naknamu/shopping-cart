@@ -2,7 +2,15 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import styles from "../css/Item.module.css";
 
 const Item = (props) => {
-  const { clickImage, clickName, clickPrice, nonEmptyCartCount , handleMinusBtn, index, handlePlusBtn} = props;
+  const {
+    clickImage,
+    clickName,
+    clickPrice,
+    nonEmptyCartCount,
+    handleMinusBtn,
+    index,
+    handlePlusBtn,
+  } = props;
 
   return (
     <>

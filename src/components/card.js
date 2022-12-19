@@ -1,5 +1,13 @@
 const Card = (props) => {
-  const { handleAddToCart, itemImage, itemName, itemPrice, id, cardCountArray, setCardCountArray} = props;
+  const {
+    handleAddToCart,
+    itemImage,
+    itemName,
+    itemPrice,
+    id,
+    cardCountArray,
+    setCardCountArray,
+  } = props;
 
   const handleCardCount = () => {
     let temp_cardCount = [...cardCountArray];

@@ -5,7 +5,7 @@ import pcx160_cbs from "../images/pcx160-cbs.png";
 import { useEffect, useState } from "react";
 
 const Shop = (props) => {
-  const { handleAddToCart, cardCountArray, setCardCountArray} = props;
+  const { handleAddToCart, cardCountArray, setCardCountArray } = props;
 
   const motor = [
     [click160, "The All-New CLICK160", "122900.00"],
@@ -34,12 +34,11 @@ const Shop = (props) => {
 
     //initializes count for each card item
     let tempCardCount = [...cardCountArray];
-    for (let i=0; i<motor.length; i++){
+    for (let i = 0; i < motor.length; i++) {
       tempCardCount.push(0);
     }
 
     setCardCountArray(tempCardCount);
-
   }, []);
 
   return (
