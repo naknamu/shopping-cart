@@ -104,6 +104,8 @@ function App() {
     setNewPrice(tempPrice);
 
     handleTotalPrice(tempPrice);
+
+    handleEmptyPrice(tempPrice);
   }
 
   const handleTotalPrice = (tempArray) => {
@@ -151,8 +153,13 @@ function App() {
           setCardCountArray={setCardCountArray}
 
           totalPrice={totalPrice}
+          handleTotalPrice={handleTotalPrice}
+
           newPrice={newPrice}
+          setNewPrice={setNewPrice}
+
           nonEmptyPrice={nonEmptyPrice}
+          setNonEmptyPrice={setNonEmptyPrice}
         />
       </BrowserRouter>
     </>

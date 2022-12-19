@@ -24,8 +24,11 @@ const ShoppingCart = (props) => {
     cardCountArray,
     setCardCountArray,
     totalPrice,
+    handleTotalPrice,
     newPrice,
-    nonEmptyPrice
+    setNewPrice,
+    nonEmptyPrice,
+    setNonEmptyPrice
   } = props;
 
   const [isCartEmpty, setIsCartEmpty] = useState(true);
@@ -45,7 +48,7 @@ const ShoppingCart = (props) => {
   };
 
   const handleMinusBtn = (index) => {
-    //array filtered with undefined items
+    //array with no undefined items
     let tempCount = [...nonEmptyCartCount];
     let tempArray = [...nonEmptyCartItem];
 
@@ -54,6 +57,7 @@ const ShoppingCart = (props) => {
 
     //price decrease
     // handlePriceChange(index, tempArray ,tempCount);
+    handlePriceDecrease(index, tempArray, tempCount);
 
     //array with undefined items
     let tempNullCountArray = [...cartCountArray];
@@ -117,6 +121,34 @@ const ShoppingCart = (props) => {
     setCartCount(cartCount+1);
   }
 
+  const handlePriceDecrease = (index, arrayItem, arrayCount) => {
+    //array with no undefined items
+    let tempCount = [...arrayCount];
+    let tempArray = [...arrayItem];
+    let tempPrice = [...nonEmptyPrice];
+    let tempEmptyPrice = [...newPrice];
+
+    let numPrice = parseFloat(tempArray[index][2]);
+    numPrice *= tempCount[index];
+
+    let newIndex = tempArray[index][3];
+    tempEmptyPrice[newIndex] = numPrice.toString() + '.00';
+    setNewPrice(tempEmptyPrice);
+
+    //if price is zero, delete item
+    if (numPrice === 0){
+      tempPrice.splice(index, 1);
+      tempEmptyPrice[newIndex] = undefined;
+      setNewPrice(tempEmptyPrice);
+    } else{
+      tempPrice[index] = numPrice.toString() + '.00';
+    }
+
+    setNonEmptyPrice(tempPrice);
+
+    handleTotalPrice(tempPrice);
+  }
+
   useEffect(() => {
     if (cartCount > 0) {
       setIsCartEmpty(false);
@@ -176,7 +208,7 @@ const ShoppingCart = (props) => {
                     key={index}
                     clickImage={item[0]}
                     clickName={item[1]}
-                    clickPrice={newPrice[index]}
+                    clickPrice={nonEmptyPrice[index]}
                     nonEmptyCartCount={nonEmptyCartCount[index]}
                     handleMinusBtn={handleMinusBtn}
                     index={index}
