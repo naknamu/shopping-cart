@@ -104,6 +104,7 @@ const ShoppingCart = (props) => {
 
     //price increase
     // handlePriceChange(index, tempArray , tempCount);
+    handlePriceIncrease(index, tempArray , tempCount);
 
     //array with undefined items
     let newIndex = tempArray[index][3];
@@ -146,6 +147,30 @@ const ShoppingCart = (props) => {
 
     setNonEmptyPrice(tempPrice);
 
+    //calc total price
+    handleTotalPrice(tempPrice);
+  }
+
+  const handlePriceIncrease = (index, arrayItem, arrayCount) => {
+    //array with no undefined items
+    let tempCount = [...arrayCount];
+    let tempArray = [...arrayItem];
+    let tempPrice = [...nonEmptyPrice];
+    let tempEmptyPrice = [...newPrice];
+
+    let numPrice = parseFloat(tempArray[index][2]);
+    numPrice *= tempCount[index];
+
+    //price array with no undefined items
+    tempPrice[index] = numPrice.toString() + '.00';
+    setNonEmptyPrice(tempPrice);
+
+    //price array with undefined items
+    let newIndex = tempArray[index][3];
+    tempEmptyPrice[newIndex] = numPrice.toString() + '.00';
+    setNewPrice(tempEmptyPrice);
+
+    //calc total price
     handleTotalPrice(tempPrice);
   }
 
