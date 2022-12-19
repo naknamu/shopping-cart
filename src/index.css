@@ -107,9 +107,6 @@ footer {
   text-align: center;
   font-size: 1rem;
   padding: 0.5rem;
-  position: fixed;
-  bottom: 0;
-  z-index: 1;
   width: 100%;
 }
 
@@ -118,10 +115,6 @@ a {
   color: white;
 }
 
-.home {
-  height: 48.2rem;
-}
-
 video {
-  position: fixed;
+  max-width: 100%;
 }
