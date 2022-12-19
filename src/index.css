@@ -42,9 +42,18 @@ body {
   gap: 7rem;
 }
 
+nav > * {
+  transition: transform 0.15s ease-in-out 0s;
+}
+
+nav > *:hover {
+  transform: scale(1.2);
+}
+
 .simbolo {
   display: flex;
   align-self: center;
+  position: relative;
 }
 
 main {
