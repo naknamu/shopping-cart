@@ -1,8 +1,9 @@
+import { useEffect, useState } from "react";
 import Card from "./card";
 import click160 from "../images/all-new-click160.png";
 import airblade160 from "../images/airblade160.png";
 import pcx160_cbs from "../images/pcx160-cbs.png";
-import { useEffect, useState } from "react";
+import pcx160_abs from "../images/pcx160-abs.png";
 
 const Shop = (props) => {
   const { handleAddToCart, cardCountArray, setCardCountArray } = props;
@@ -11,6 +12,7 @@ const Shop = (props) => {
     [click160, "The All-New CLICK160", "122900.00"],
     [airblade160, "The All-New AirBlade160", "125900.00"],
     [pcx160_cbs, "PCX160-CBS", "133900.00"],
+    [pcx160_abs, "PCX160-ABS", "151,900.00"]
   ];
 
   const [itemImage, setItemImage] = useState([]);
