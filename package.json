@@ -15,7 +15,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "home": "http://naknamu.github.io/shopping-cart",
+  "homepage": "http://naknamu.github.io/shopping-cart",
   "scripts": {
     "start": "react-scripts start",
     "predeploy" : "npm run build",
