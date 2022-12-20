@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5aa14b6.css",
-    "main.js": "/static/js/main.0bc221a3.js",
-    "static/media/forza.mp4": "/static/media/forza.cd0f619adede4ce55954.mp4",
-    "static/media/airblade160.png": "/static/media/airblade160.c6369ca49ffec7ab33b5.png",
-    "static/media/adv160.png": "/static/media/adv160.8d270370b3c07a2b795d.png",
-    "static/media/beat-street.png": "/static/media/beat-street.769079af76288aa054fa.png",
-    "static/media/beat-fashion-sport.png": "/static/media/beat-fashion-sport.4faf64d954d952ebbe28.png",
-    "static/media/pcx160-cbs.png": "/static/media/pcx160-cbs.ec8bd2bfb112744a6640.png",
-    "static/media/beat-premium.png": "/static/media/beat-premium.e7b39d8bdf20e61cfa84.png",
-    "static/media/click125.png": "/static/media/click125.c4c49a90ca25d9451fab.png",
-    "static/media/pcx160-abs.png": "/static/media/pcx160-abs.5dea5099f1e76d496a07.png",
-    "static/media/all-new-click160.png": "/static/media/all-new-click160.fa34662a2e88ede2559e.png",
-    "static/media/dio.png": "/static/media/dio.6064956ae4d12baed20c.png",
-    "static/media/genio.png": "/static/media/genio.aa648610491f34584090.png",
-    "index.html": "/index.html",
-    "main.a5aa14b6.css.map": "/static/css/main.a5aa14b6.css.map",
-    "main.0bc221a3.js.map": "/static/js/main.0bc221a3.js.map"
+    "main.css": "/shopping-cart/static/css/main.a5aa14b6.css",
+    "main.js": "/shopping-cart/static/js/main.de151855.js",
+    "static/media/forza.mp4": "/shopping-cart/static/media/forza.cd0f619adede4ce55954.mp4",
+    "static/media/airblade160.png": "/shopping-cart/static/media/airblade160.c6369ca49ffec7ab33b5.png",
+    "static/media/adv160.png": "/shopping-cart/static/media/adv160.8d270370b3c07a2b795d.png",
+    "static/media/beat-street.png": "/shopping-cart/static/media/beat-street.769079af76288aa054fa.png",
+    "static/media/beat-fashion-sport.png": "/shopping-cart/static/media/beat-fashion-sport.4faf64d954d952ebbe28.png",
+    "static/media/pcx160-cbs.png": "/shopping-cart/static/media/pcx160-cbs.ec8bd2bfb112744a6640.png",
+    "static/media/beat-premium.png": "/shopping-cart/static/media/beat-premium.e7b39d8bdf20e61cfa84.png",
+    "static/media/click125.png": "/shopping-cart/static/media/click125.c4c49a90ca25d9451fab.png",
+    "static/media/pcx160-abs.png": "/shopping-cart/static/media/pcx160-abs.5dea5099f1e76d496a07.png",
+    "static/media/all-new-click160.png": "/shopping-cart/static/media/all-new-click160.fa34662a2e88ede2559e.png",
+    "static/media/dio.png": "/shopping-cart/static/media/dio.6064956ae4d12baed20c.png",
+    "static/media/genio.png": "/shopping-cart/static/media/genio.aa648610491f34584090.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.a5aa14b6.css.map": "/shopping-cart/static/css/main.a5aa14b6.css.map",
+    "main.de151855.js.map": "/shopping-cart/static/js/main.de151855.js.map"
   },
   "entrypoints": [
     "static/css/main.a5aa14b6.css",
-    "static/js/main.0bc221a3.js"
+    "static/js/main.de151855.js"
   ]
 }
