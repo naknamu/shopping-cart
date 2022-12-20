@@ -91,7 +91,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Header handleCartClick={handleCartClick} cartCount={cartCount} />
         <Routes>
           <Route path="/" element={<Home />} />
